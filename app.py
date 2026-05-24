@@ -36,67 +36,164 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif !important; }
 #MainMenu, footer, header { visibility: hidden; }
 .block-container { padding-top: 0 !important; }
 
+/* ── DARK BACKGROUND FIX ── */
+.stApp, .main, section.main, [data-testid="stAppViewContainer"] {
+    background-color: #0d0d0d !important;
+}
+[data-testid="stAppViewBlockContainer"] {
+    background-color: #0d0d0d !important;
+}
+
+/* ── GLOBAL TEXT COLOR FIX ── */
+html, body, p, span, div, label, li,
+[class*="css"], .stMarkdown, .stText {
+    color: #e8e8e8 !important;
+}
+
 /* Sidebar */
 section[data-testid="stSidebar"] {
     background: #0a0a0a !important;
-    border-right: 2px solid #111;
+    border-right: 2px solid #333 !important;
 }
 section[data-testid="stSidebar"] * { color: #ffffff !important; }
 
 /* Buttons */
 .stButton > button {
-    background: #000 !important; color: #fff !important;
-    border: 2px solid #000 !important; border-radius: 2px !important;
-    font-weight: 700 !important; letter-spacing: 1px !important;
-    text-transform: uppercase !important; font-size: 0.78rem !important;
-    width: 100%; transition: all 0.15s !important;
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border: 2px solid #555 !important;
+    border-radius: 2px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-size: 0.78rem !important;
+    width: 100%;
+    transition: all 0.15s !important;
 }
-.stButton > button:hover { background: #fff !important; color: #000 !important; }
+.stButton > button:hover {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
 
 /* Inputs */
 .stTextInput > div > div > input,
 .stTextArea > div > div > textarea {
-    border: 2px solid #000 !important; border-radius: 2px !important;
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border: 2px solid #444 !important;
+    border-radius: 2px !important;
     font-family: 'JetBrains Mono', monospace !important;
 }
+.stTextInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder {
+    color: #666 !important;
+}
+
+/* Selectbox */
+.stSelectbox > div > div {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border: 2px solid #444 !important;
+    border-radius: 2px !important;
+}
+.stSelectbox svg { fill: #fff !important; }
 
 /* Metrics */
 [data-testid="stMetric"] {
-    background: #000; padding: 1rem; border-radius: 3px;
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    padding: 1rem;
+    border-radius: 3px;
 }
 [data-testid="stMetric"] * { color: #fff !important; }
 [data-testid="stMetricLabel"] {
-    font-size: 0.62rem !important; letter-spacing: 2px !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 2px !important;
     text-transform: uppercase !important;
+    color: #aaa !important;
 }
 [data-testid="stMetricValue"] {
-    font-size: 1.3rem !important; font-weight: 900 !important;
+    font-size: 1.3rem !important;
+    font-weight: 900 !important;
     font-family: 'JetBrains Mono', monospace !important;
+    color: #fff !important;
 }
 
 /* Tabs */
-.stTabs [data-baseweb="tab-list"] { border-bottom: 2px solid #000; gap: 0; }
+.stTabs [data-baseweb="tab-list"] {
+    border-bottom: 2px solid #444 !important;
+    background: transparent !important;
+    gap: 0;
+}
 .stTabs [data-baseweb="tab"] {
-    font-weight: 700 !important; letter-spacing: 2px !important;
-    font-size: 0.68rem !important; text-transform: uppercase !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    font-size: 0.68rem !important;
+    text-transform: uppercase !important;
     padding: 0.6rem 0.8rem !important;
+    color: #aaa !important;
+    background: transparent !important;
 }
 .stTabs [aria-selected="true"] {
-    border-bottom: 3px solid #000 !important; color: #000 !important;
+    border-bottom: 3px solid #fff !important;
+    color: #fff !important;
 }
 
 /* Progress */
-.stProgress > div > div > div { background: #000 !important; }
+.stProgress > div > div > div { background: #fff !important; }
+.stProgress > div > div {
+    background: #333 !important;
+}
 
-/* Selectbox */
-.stSelectbox > div > div { border: 2px solid #000 !important; border-radius: 2px !important; }
+/* Code blocks */
+code, .stCode {
+    background: #1a1a1a !important;
+    color: #7fff7f !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    border: 1px solid #333 !important;
+}
 
-/* Code */
-code { background: #f0f0f0 !important; color: #000 !important;
-       font-family: 'JetBrains Mono', monospace !important; }
+/* Dataframe */
+[data-testid="stDataFrame"] {
+    background: #1a1a1a !important;
+    color: #fff !important;
+}
+
+/* Info / Success / Warning / Error boxes */
+[data-testid="stAlert"] { border-radius: 3px !important; }
 
 /* Chat messages */
-[data-testid="stChatMessage"] { border: 1px solid #e0e0e0; border-radius: 3px; }
+[data-testid="stChatMessage"] {
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    border-radius: 3px !important;
+    color: #fff !important;
+}
+
+/* Dividers */
+hr { border-color: #333 !important; }
+
+/* Expander */
+[data-testid="stExpander"] {
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+}
+[data-testid="stExpander"] * { color: #e8e8e8 !important; }
+
+/* File uploader */
+[data-testid="stFileUploader"] {
+    background: #1a1a1a !important;
+    border: 2px dashed #444 !important;
+    color: #aaa !important;
+}
+
+/* Download button */
+[data-testid="stDownloadButton"] > button {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border: 2px solid #555 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
