@@ -33,7 +33,11 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 
 html, body, [class*="css"] { font-family: 'Inter', sans-serif !important; }
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header { visibility: hidden; }
+[data-testid="collapsedControl"] { display: block !important; visibility: visible !important; }
+button[kind="header"] { display: block !important; visibility: visible !important; }
 .block-container { padding-top: 0 !important; }
 
 /* ── DARK BACKGROUND FIX ── */
